@@ -155,10 +155,6 @@ body {
   text-align: center;
 }
 
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
-
 .header {
   position: fixed;
   top: 0;
@@ -183,10 +179,28 @@ body {
   align-items: center;
 }
 
+/* code**** */
+
 .logo-work {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-1 {
+  width: 150px;
+  height: 150px;
+  background-image: url("assets/images/L&T.png");
+  background-size: cover;
+  background-color: transparent;
+  filter: grayscale(100%); /* Apply black and white effect */
+  transition: filter 0.5s; /* Add transition for smooth effect */
+}
+
+.logo-1:hover {
+  filter: grayscale(0%); /* Remove the black and white effect */
 }
 
 .menu-toggle-btn {
@@ -221,9 +235,127 @@ body {
   color: var(--majorelle-blue);
 }
 
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
+/* Code */
+
+.services-class {
+  text-align: center;
+  font-weight: 700;
+  font-size: 40px;
+  border-bottom: 2px solid green;
+  display: inline-block;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.slider {
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  /* border: 0; */
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: #333;
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 3.25rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  /* Only necessary when overlying images */
+  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
+}
+
+/* another code */
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  display: flex;
+  gap: 40px;
+  text-align: center;
+}
+
+.img-res {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding-left: 45px;
+}
+
+.dots__dot:last-child {
+  margin: 0;
+}
+
+.dots__dot--active {
+  background-color: #fff;
+  /* background-color: #888; */
+  opacity: 1;
+}
 
 .hero {
   padding: 125px 0 var(--section-padding);
@@ -236,6 +368,9 @@ body {
 
 .hero-title {
   margin-bottom: 25px;
+  padding-left: 50px;
+  /* border-bottom: 2px solid green; */
+  /* display: inline-block; */
 }
 
 .hero-text {
@@ -244,6 +379,7 @@ body {
   font-weight: var(--fw-500);
   line-height: 1.8;
   margin-bottom: 40px;
+  padding-left: 50px;
 }
 
 .form-text {
@@ -280,6 +416,10 @@ body {
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
+
+#about {
+  background: #ededed;
+}
 
 .about {
   padding-block: var(--section-padding);
@@ -799,10 +939,6 @@ footer .logo {
  */
 
 @media (min-width: 768px) {
-  /**
-   * REUSED STYLE
-   */
-
   .container {
     max-width: 720px;
   }
@@ -810,10 +946,6 @@ footer .logo {
   .section-text {
     max-width: 645px;
   }
-
-  /**
-   * HERO
-   */
 
   .hero :is(.hero-text, .form-text, .hero-form) {
     max-width: 520px;
@@ -824,17 +956,9 @@ footer .logo {
     margin-inline: auto;
   }
 
-  /**
-   * ABOUT
-   */
-
   .about-list {
     grid-template-columns: 1fr 1fr;
   }
-
-  /**
-   * CONTACT
-   */
 
   .contact-form .wrapper-flex {
     display: flex;
