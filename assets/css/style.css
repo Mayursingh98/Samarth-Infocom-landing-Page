@@ -1252,7 +1252,15 @@ footer .logo {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 355px) {
+  .container {
+    max-width: 950px;
+  }
+
+  .section-text {
+    max-width: 450px;
+  }
+
   .slider {
     height: auto; /* Allow the slider to adapt to varying content heights */
   }
