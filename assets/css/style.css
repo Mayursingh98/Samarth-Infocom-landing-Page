@@ -1252,7 +1252,7 @@ footer .logo {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 992px) {
   .slider {
     height: auto; /* Allow the slider to adapt to varying content heights */
   }
