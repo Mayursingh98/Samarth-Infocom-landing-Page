@@ -169,6 +169,25 @@ body {
   z-index: 4;
 }
 
+.header-image {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.contain {
+  display: inline-block;
+  animation: contain-scroll 10s linear infinite;
+}
+
+@keyframes contain-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .header.active {
   height: 330px;
 }
@@ -182,21 +201,53 @@ body {
 /* code**** */
 
 .logo-work {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
   display: flex;
+  align-items: center;
+  /* white-space: nowrap;
+  overflow: hidden; */
+  /* display: flex;
   justify-content: space-between;
   gap: 40px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+}
+
+.logo-list {
+  /* padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  display: inline-block;
+  animation: logo 30s linear infinite; */
+  display: flex;
+  animation: logo 30s linear infinite;
+}
+
+@keyframes logo {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .logo-1 {
   width: 150px;
   height: 150px;
-  background-image: url("assets/images/L&T.png");
+  background-image: url("assets/images/");
   background-size: cover;
   background-color: transparent;
   filter: grayscale(100%); /* Apply black and white effect */
   transition: filter 0.5s; /* Add transition for smooth effect */
+}
+
+.logo-1 {
+  margin: 0 10px;
 }
 
 .logo-1:hover {
@@ -241,8 +292,8 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 40px;
-  border-bottom: 2px solid green;
-  display: inline-block;
+  /* border-bottom: 2px solid green; */
+  display: block;
   text-transform: uppercase;
   padding-bottom: 15px;
 }
@@ -369,15 +420,17 @@ body {
 .hero-title {
   margin-bottom: 25px;
   padding-left: 50px;
+  text-align: center;
   /* border-bottom: 2px solid green; */
   /* display: inline-block; */
 }
 
 .hero-text {
   color: var(--cool-gray);
-  font-size: var(--fs-4);
+  /* font-size: var(--fs-4); */
+  font-size: 24px;
   font-weight: var(--fw-500);
-  line-height: 1.8;
+  line-height: 1.5;
   margin-bottom: 40px;
   padding-left: 50px;
 }
@@ -385,13 +438,26 @@ body {
 .form-text {
   color: var(--independence);
   font-weight: var(--fw-500);
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.2;
   margin-bottom: 20px;
+}
+
+.bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.bullet-list li {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #000080;
 }
 
 .form-text span {
   display: inline-block;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .email-field {
@@ -418,7 +484,8 @@ body {
 \*-----------------------------------*/
 
 #about {
-  background: #ededed;
+  /* background: #ffffcc; */
+  background: #c8e6c9;
 }
 
 .about {
@@ -454,7 +521,8 @@ body {
 
 .about-list {
   display: grid;
-  gap: 20px;
+  justify-items: center;
+  gap: 15px;
 }
 
 .about-card {
@@ -1028,7 +1096,7 @@ footer .logo {
     justify-content: center;
     align-items: center;
     width: max-content;
-    gap: 40px;
+    gap: 90px;
     margin-inline: auto;
   }
 
@@ -1181,5 +1249,31 @@ footer .logo {
 
   .footer-list {
     width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: auto; /* Allow the slider to adapt to varying content heights */
+  }
+
+  .slide {
+    height: auto; /* Allow the slide content to adjust its own height */
+  }
+
+  .slide > img {
+    height: auto; /* Let images adapt to their original aspect ratio */
+  }
+
+  .slider__btn {
+    font-size: 2rem; /* Adjust button font size for mobile */
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .dots__dot {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 1rem; /* Adjust dot spacing for mobile */
   }
 }
